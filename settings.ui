@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>251</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>mare.by - Settings</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <widget class="QGroupBox" name="group_host">
+     <property name="title">
+      <string>Host</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_host">
+      <item>
+       <widget class="QRadioButton" name="radio_mare">
+        <property name="text">
+         <string>mare.by (permanent)</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="radio_temp_mare">
+        <property name="text">
+         <string>temp.mare.by (temporary)</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="group_expire">
+     <property name="title">
+      <string>Time to keep (only temp.mare.by)</string>
+     </property>
+     <layout class="QFormLayout" name="form_expire">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_expire">
+        <property name="text">
+         <string>Lasts:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QComboBox" name="combo_expire"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="group_name">
+     <property name="title">
+      <string>Name</string>
+     </property>
+     <layout class="QFormLayout" name="formLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_nameFormat">
+        <property name="text">
+         <string>Name:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="input_name"/>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_result">
+        <property name="text">
+         <string>Result:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLabel" name="label_example">
+        <property name="text">
+         <string>example</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="group_clipboard">
+     <property name="title">
+      <string>Clipboard</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
+       <widget class="QRadioButton" name="radio_copy">
+        <property name="text">
+         <string>Copy link</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="radio_dontcopy">
+        <property name="text">
+         <string>Don't copy link</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Save</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>radio_mare</tabstop>
+  <tabstop>radio_temp_mare</tabstop>
+  <tabstop>combo_expire</tabstop>
+  <tabstop>input_name</tabstop>
+  <tabstop>radio_copy</tabstop>
+  <tabstop>radio_dontcopy</tabstop>
+  <tabstop>buttonBox</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>Dialog</receiver>
+   <slot>accept()</slot>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>Dialog</receiver>
+   <slot>reject()</slot>
+  </connection>
+  <connection>
+   <sender>radio_temp_mare</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>group_expire</receiver>
+   <slot>setEnabled(bool)</slot>
+  </connection>
+ </connections>
+</ui>

@@ -1,0 +1,15 @@
+[submodule "deps/requests"]
+	path = deps/requests
+	url = https://github.com/kennethreitz/requests.git
+[submodule "deps/urllib3"]
+	path = deps/urllib3
+	url = https://github.com/urllib3/urllib3
+[submodule "deps/python-certifi"]
+	path = deps/python-certifi
+	url = https://github.com/certifi/python-certifi.git
+[submodule "deps/idna"]
+	path = deps/idna
+	url = https://github.com/kjd/idna.git
+[submodule "deps/chardet"]
+	path = deps/chardet
+	url = https://github.com/chardet/chardet.git
