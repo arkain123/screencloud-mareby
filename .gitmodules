@@ -1,6 +1,6 @@
 [submodule "deps/requests"]
 	path = deps/requests
-	url = https://github.com/kennethreitz/requests.git
+	url = https://github.com/psf/requests.git
 [submodule "deps/urllib3"]
 	path = deps/urllib3
 	url = https://github.com/urllib3/urllib3
